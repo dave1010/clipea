@@ -1,6 +1,6 @@
-# Clipea
+# Clipea 📎🟢
 
-**Like Clipea but for the CLI. Using LLMs. A bit clumpy.**
+**Like Clippy but for the CLI. A blazing fast AI helper for your command line.**
 
 Clipea is a barebones, cheaper and hackable [Copilot for CLI](https://githubnext.com/projects/copilot-cli).
 
@@ -8,7 +8,7 @@ It has similar roots to [Hubcap](https://github.com/dave1010/hubcap) but is less
 
 Tell Clipea what you want to do and it'll give you a shell command, asking you if you want to run it. Clipea works even better with Zsh, as it adds the shell command to your console as a pending command, just as if you had typed it yourself!
 
-**Warning:** AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
+❗ **Warning:** AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
 
 ## Usage
 

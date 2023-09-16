@@ -74,6 +74,7 @@ if (substr($prompt, 0, 2) === '4 ') {
     $prompt = substr($prompt, 2);
 }
 
+echo "📎🟢 ";
 
 $line = '';
 foreach (get_llm_response($system, $prompt, $llmOpts) as $char) {
