@@ -1,0 +1,7 @@
+Basic usage:
+
+    clipea <query>    Ask Clipea how to do <query>
+    clipea alias      Install the ?? alias
+    clipea help       This message
+    clipea env        Print out the shell environment that's sent to the LLM
+    clipea setup      Install and configure required dependencies
