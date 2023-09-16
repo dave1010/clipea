@@ -90,7 +90,7 @@ This requires running `source clipea.zsh`.
 
 Clipea can set up a handy `??` alias that runs this for you.
 
-    source clipea alias
+    source clipea.zsh alias
     source ~/.zshrc
 
 ## How it works
