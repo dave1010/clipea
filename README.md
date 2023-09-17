@@ -70,16 +70,15 @@ This allows it to give better responses.
 Mac:
 
     brew install clipea #TODO
+    clipea setup
 
 Linux or manual Mac install:
 
     git clone https://github.com/dave1010/clipea.git
     cd clipea
     ./clipea setup
+    ./clipea add current dir to my path on shell login
 
-1. Clone the repo and add it to your $PATH
-2. `pip install llm`
-3. `./clipea deps`
 
 
 ## Zsh Shell integration
