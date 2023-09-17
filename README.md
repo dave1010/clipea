@@ -117,12 +117,3 @@ Run `clipea env` to see the data the LLM gets.
 
 As a very rough example, using the default GPT-3, 100 Clipea queries to OpenAI cost $0.02.
 Set a quota and keep an eye on costs to make sure.
-
-## TODO
-
-* First use wizard: disclaimer, user preferences, setup
-* Explain command (eg type `<ctrl-a>?? ex <enter>` but watch out for pipes)
-* Continue mode:
-  * sometimes the LLM wants to send more content. Doesn't work with the shell itegration. 
-  * could save the LLM output to a file and then stream it again if you run `??` by itself
-* Run against https://github.com/Significant-Gravitas/Auto-GPT-Benchmarks
