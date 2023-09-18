@@ -8,7 +8,8 @@ It has similar roots to [Hubcap](https://github.com/dave1010/hubcap) but is less
 
 Tell Clipea what you want to do and it'll give you a shell command, asking you if you want to run it. Clipea works even better with Zsh, as it adds the shell command to your console as a pending command, just as if you had typed it yourself!
 
-❗ **Warning:** AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
+> [!WARNING]
+> AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
 
 ## Usage
 
@@ -44,6 +45,7 @@ Then to edit, press `<up>` then ` ignore node modules` to get something like
     ?? open my shell login script in my editor
     ?? git fetch, rebase master, safely force push
     ?? open bbc news
+    ?? check the spf record for example.com
 
 GPT-4 mode: just start the query with a "4". Remember that OpenAI charge lots more for GPT-4.
 Generally the standard GPT-3.5 is fine for commandline stuff.
@@ -65,7 +67,7 @@ This allows it to give better responses.
     ?? install curl
     ?? compare README.md to my clipboard
 
-## Installation and setup
+## 🚀 Installation and setup
 
 Mac:
 
