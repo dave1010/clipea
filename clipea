@@ -2,8 +2,10 @@
 <?php
 // Clipea
 
-require_once __DIR__ . '/lib/cli.php';
-require_once __DIR__ . '/lib/llm.php';
+define('CLIPEA_DIR', __DIR__);
+
+require_once CLIPEA_DIR . '/lib/cli.php';
+require_once CLIPEA_DIR . '/lib/llm.php';
 
 if (!shell_exec('which llm')) {
     die("Error: dependency 'llm' not found. Run 'clipea setup' to install\n");
@@ -12,11 +14,11 @@ if (!shell_exec('which llm')) {
 $env = [
     'shell' => trim(shell_exec('ps -o comm= -p $(ps -o ppid= -p $(ps -o ppid= -p $$))')),
     'os' => PHP_OS,
-    // 'cwd' => getcwd(),
     'editor' => getenv('EDITOR') ?? 'nano'
+    // 'cwd' => getcwd(),
 ];
 
-$system = file_get_contents(__DIR__ . '/system-prompt.txt') . json_encode($env);
+$system = file_get_contents(CLIPEA_DIR . '/system-prompt.txt') . json_encode($env);
 
 
 function get_input(array $argv) {
@@ -36,34 +38,24 @@ function get_input(array $argv) {
 
 $prompt = get_input($argv);
 
-
-
 switch($prompt) {
     case 'alias':
-        switch($env['shell']) {
-            case '-zsh':
-                $cmd = "alias '??'='source " . __DIR__ . "/clipea.zsh'";
-                break;
-            default:
-                $cmd = "alias '??'='source " . __DIR__ . "/clipea'";
-        }        
-        $prompt = "Append this line to my " . $env['shell'] . " startup file, watching out for quotes and escaping, then explain how to manually source it: " . $cmd;
+        require_once CLIPEA_DIR . "/route/alias.php";
+        // no exit
         break;
     case 'help':
     case '--help':
     case '-h':
-        echo file_get_contents(__DIR__ . '/usage.txt');
+        require_once CLIPEA_DIR . "/route/help.php";
         exit;
     case '':
-        echo "Error: no query specified";
+        echo "Error: no query specified\n";
         exit;
     case 'env':
-        echo json_encode($env);
+        require_once CLIPEA_DIR . "/route/env.php";
         exit;
     case 'setup':
-        passthru('brew install llm');
-        echo "Get an OpenAI API key from: https://platform.openai.com/account/api-keys\n";
-        passthru('llm keys set openai');
+        require_once CLIPEA_DIR . "/route/setup.php";
         exit;
 }
 
