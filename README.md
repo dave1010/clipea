@@ -1,5 +1,7 @@
 # Clipea 📎🟢
 
+[![Install with Homebrew](https://img.shields.io/badge/Homebrew-Tap-blue.svg)](https://github.com/dave1010/homebrew-clipea)
+
 **Like Clippy but for the CLI. A blazing fast AI helper for your command line.**
 
 Clipea is a barebones, cheaper and hackable [Copilot for CLI](https://githubnext.com/projects/copilot-cli).
@@ -10,6 +12,13 @@ Tell Clipea what you want to do and it'll give you a shell command, asking you i
 
 > [!WARNING]
 > AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
+
+## Quick start
+
+    brew tap dave1010/clipea
+    brew install clipea
+    clipea setup
+    clipea alias
 
 ## Usage
 
@@ -84,13 +93,15 @@ Then to edit, press `<up>` then ` ignore node modules` to get something like
 
 ## 🚀 Installation and setup
 
-Mac:
+### Mac
+
+[![Install with Homebrew](https://img.shields.io/badge/Homebrew-Tap-blue.svg)](https://github.com/dave1010/homebrew-clipea)
 
     brew tap dave1010/clipea
     brew install clipea
     clipea setup
 
-Linux or manual Mac install:
+### Manual install
 
     pip install llm
     git clone https://github.com/dave1010/clipea.git
@@ -98,16 +109,18 @@ Linux or manual Mac install:
     ./clipea setup
     ./clipea add current dir to my path on shell login
 
-## Zsh Shell integration and Alias
+### Zsh Shell integration and Alias
 
-Clipea takes advantage of zsh's `print -z`, which allows it to output commands on the commandline.
+> [!NOTICE]
+> The `??` shell alias is highly recommended if you use zsh
 
-This requires running `source clipea.zsh alias`.
+Clipea can set up a very handy `??` alias.
+As well as being quicker to type,
+this uses zsh's `print -z`, allowing it to output commands on the commandline.
 
-Clipea can set up a handy `??` alias that runs this for you.
+Install the alias:
 
-    source clipea.zsh alias
-    source ~/.zshrc
+    clipea alias
 
 ## Internals
 
@@ -118,7 +131,15 @@ Clipea uses [llm](https://github.com/simonw/llm) to interact with large language
 By default it will use OpenAI's GPT-3.5 model but can be configured to other models, such as Llama.
 Running `clipea setup` will talk you through getting OpenAI keys.
 
-## Privacy
+## Warnings
+
+### Safety
+
+AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
+
+Always read and check what Clipea suggets before accepting it.
+
+### Privacy
 
 Clipea uses OpenAI's APIs by default, though can be set to use any LLM that `llm` supports.
 
@@ -126,7 +147,7 @@ Only very basic environment info like your OS and editor is sent to the LLM.
 
 Run `clipea env` to see the data the LLM gets.
 
-## Cost
+### Cost
 
 As a very rough example, using the default GPT-3.5, 100 Clipea queries to OpenAI cost $0.02.
 Set a quota and keep an eye on costs to make sure.
