@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 // Clipea
+// https://github.com/dave1010/clipea
+// (c) 2023 Dave Hulbert
 
 define('CLIPEA_DIR', __DIR__);
 
@@ -68,6 +70,9 @@ if (substr($prompt, 0, 2) === '4 ') {
 
 echo "📎🟢 ";
 
+
+// Look how simple this is!
+// All it does is stream characters from the llm process and let you execute some of them
 $line = '';
 foreach (get_llm_response($system, $prompt, $llmOpts) as $char) {
     echo $char;

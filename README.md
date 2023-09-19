@@ -86,42 +86,41 @@ Then to edit, press `<up>` then ` ignore node modules` to get something like
 
 Mac:
 
-    brew install clipea #TODO
+    brew tap dave1010/clipea
+    brew install clipea
     clipea setup
 
 Linux or manual Mac install:
 
+    pip install llm
     git clone https://github.com/dave1010/clipea.git
     cd clipea
     ./clipea setup
     ./clipea add current dir to my path on shell login
 
-## Zsh Shell integration
+## Zsh Shell integration and Alias
 
-Clipea takes advantage of zsh's `print -f`, which allows it to output commands on the commandline.
+Clipea takes advantage of zsh's `print -z`, which allows it to output commands on the commandline.
 
-This requires running `source clipea.zsh`.
+This requires running `source clipea.zsh alias`.
 
 Clipea can set up a handy `??` alias that runs this for you.
 
     source clipea.zsh alias
     source ~/.zshrc
 
-## How it works
+## Internals
+
+Clipea is currently written in PHP but may switch to Python ([#3](https://github.com/dave1010/clipea/issues/3)).
 
 Clipea uses [llm](https://github.com/simonw/llm) to interact with large language models.
 
-Install dependencies:
-
-    pip install llm
-
-Set up your LLM. Eg [OpenAI](https://platform.openai.com/account/api-keys) or [another model](https://llm.datasette.io/en/stable/other-models.html).
-
-    llm keys set openai
+By default it will use OpenAI's GPT-3.5 model but can be configured to other models, such as Llama.
+Running `clipea setup` will talk you through getting OpenAI keys.
 
 ## Privacy
 
-Clipea uses `llm`, which can be set to use OpenAI's LLMs or your own local one.
+Clipea uses OpenAI's APIs by default, though can be set to use any LLM that `llm` supports.
 
 Only very basic environment info like your OS and editor is sent to the LLM.
 
@@ -129,5 +128,11 @@ Run `clipea env` to see the data the LLM gets.
 
 ## Cost
 
-As a very rough example, using the default GPT-3, 100 Clipea queries to OpenAI cost $0.02.
+As a very rough example, using the default GPT-3.5, 100 Clipea queries to OpenAI cost $0.02.
 Set a quota and keep an eye on costs to make sure.
+
+## Licence
+
+MIT License
+
+Copyright (c) 2023 Dave Hulbert
