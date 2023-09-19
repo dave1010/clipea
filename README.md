@@ -26,6 +26,49 @@ Type `y<enter>` to run the command. Anything else or `<ctrl-c>` to cancel.
 Type `<enter>` to run the command. The command is editable in your shell buffer, ready to run, so you can do
 usual things like `<ctrl-c>` to cancel or `<ctrl-a>` to go to the start of the line
 
+### More examples
+
+    ?? count loc recursively
+    ?? open my shell login script in my editor
+    ?? git fetch, rebase master, safely force push
+    ?? open bbc news
+    ?? check the spf record for example.com
+    ?? What port is my webserver listening on
+    ?? Where is nginx writing logs
+    ?? Rename all txt files space to underscore
+    ?? Install something that converts pdf to text
+    ?? Find files bigger than 10mb
+    ?? Check cors headers for api.example.com
+    ?? Make a 30 char password 
+    ?? Quick http server
+    ?? Highlight URLs in index.html
+    ?? Extract package.tar.gz
+    ?? Show me just the headings from README.md
+    ?? Find replace all PHP files in project that call eval function with safe_eval
+    ?? Convert file.avi to gif
+
+### Advanced usage and tips
+
+GPT-4 mode: just start the query with a "4". Remember that OpenAI charge lots more for GPT-4.
+Generally the standard GPT-3.5 is fine for commandline stuff.
+
+    ?? 4 create a text file explaining quantum mechanics in a haiku in the style of a pirate
+
+You can also send in data via stdin. Clipea limits you to 8192 bytes, so the LLM isn't overwhelmed.
+
+    ls -F | ?? explain this project setup
+
+Generally it's best to give Clipea a filename to create a commnand for, rather than the actual file contents.
+
+    ?? count how many packages are in package.json
+
+Clipea gets given some environment limited information like your OS, shell and path.
+This allows it to give better responses.
+
+    ?? wheres my shell config
+    ?? install curl
+    ?? compare README.md to my clipboard
+
 ### Feedback and editing
 
 Just use your shell history by pressing the `<up>` arrow key. Your cursor will be at the end of
@@ -38,34 +81,6 @@ For example: typing `?? list js files recursively` may give
 Then to edit, press `<up>` then ` ignore node modules` to get something like
 
     $ find . -name "*.js" -not -path "./node_modules/*"
-
-### More examples
-
-    ?? count loc recursively
-    ?? open my shell login script in my editor
-    ?? git fetch, rebase master, safely force push
-    ?? open bbc news
-    ?? check the spf record for example.com
-
-GPT-4 mode: just start the query with a "4". Remember that OpenAI charge lots more for GPT-4.
-Generally the standard GPT-3.5 is fine for commandline stuff.
-
-    ?? 4 create a text file explaining quantum mechanics in a haiku in the style of a pirate
-
-You can also send in data via stdin. Clipea limits you to 8192 bytes, so the LLM isn't overwhelmed.
-
-    ls -F | ?? explain this project setup
-
-Generally it's best to give Clipea a filename to process, rather than the actual file contents.
-
-    ?? count how many packages are in package.json
-
-Clipea gets given some environment information like your OS, shell and path.
-This allows it to give better responses.
-
-    ?? wheres my shell config
-    ?? install curl
-    ?? compare README.md to my clipboard
 
 ## 🚀 Installation and setup
 
@@ -80,8 +95,6 @@ Linux or manual Mac install:
     cd clipea
     ./clipea setup
     ./clipea add current dir to my path on shell login
-
-
 
 ## Zsh Shell integration
 
