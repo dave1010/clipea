@@ -66,18 +66,25 @@ Behind the scenes this is using zsh's [`print -z`](https://gist.github.com/YumaI
 
 ### 🧙 Advanced usage and tips
 
-GPT-4 mode: just start the query with a "4". Remember that OpenAI charge lots more for GPT-4.
+#### GPT-4 mode
+
+Just start the query with a "4". Remember that OpenAI charge lots more for GPT-4.
 Generally the standard GPT-3.5 is fine for commandline stuff.
 
     ?? 4 create a text file explaining quantum mechanics in a haiku in the style of a pirate
+
+#### Getting data from stdin
 
 You can also send in data via stdin. Clipea limits you to 8192 bytes, so the LLM isn't overwhelmed.
 
     ls -F | ?? explain this project setup
 
-Generally it's best to give Clipea a filename to create a commnand for, rather than the actual file contents.
+Most of the time it's best to give Clipea a filename to create a command for, rather than the actual file contents.
 
-    ?? count how many packages are in package.json
+    cat package.json | ?? how many packages here     # GPT isn't great at counting
+    ?? count how many packages are in package.json   # GPT is good at suggesting commands
+
+#### Environment
 
 Clipea gets given some environment limited information like your OS, shell and path.
 This allows it to give better responses.
