@@ -13,7 +13,7 @@ Tell Clipea what you want to do and it'll give you a shell command, asking you i
 > [!WARNING]
 > AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
 
-## Quick start
+## Quick Start
 
     brew tap dave1010/clipea
     brew install clipea
@@ -22,39 +22,37 @@ Tell Clipea what you want to do and it'll give you a shell command, asking you i
 
 ## Usage
 
-### Without the Zsh shell integration
+Once installed, just ask Clipea for a command:
 
     clipea convert test.mp4 to a gif
 
 Type `y<enter>` to run the command. Anything else or `<ctrl-c>` to cancel.
 
-### With the Zsh shell integration (Recommended)
+Or if you have the Zsh integration (highly recommended), it's even easier:
 
     ?? how many gig free do i have
 
-Type `<enter>` to run the command. The command is editable in your shell buffer, ready to run, so you can do
-usual things like `<ctrl-c>` to cancel or `<ctrl-a>` to go to the start of the line
+Just press `<enter>` to run the command.
 
-### More examples
+### Using the Zsh shell integration (recommended)
 
-    ?? count loc recursively
-    ?? open my shell login script in my editor
-    ?? git fetch, rebase master, safely force push
-    ?? open bbc news
-    ?? check the spf record for example.com
-    ?? What port is my webserver listening on
-    ?? Where is nginx writing logs
-    ?? Rename all txt files space to underscore
-    ?? Install something that converts pdf to text
-    ?? Find files bigger than 10mb
-    ?? Check cors headers for api.example.com
-    ?? Make a 30 char password 
-    ?? Quick http server
-    ?? Highlight URLs in index.html
-    ?? Extract package.tar.gz
-    ?? Show me just the headings from README.md
-    ?? Find replace all PHP files in project that call eval function with safe_eval
-    ?? Convert file.avi to gif
+The Zsh integration is more than just a quick alias.
+It allows Clipea to put the command in your input buffer, ready to run, just as if you'd typed it yourself.
+
+    # setup
+    clipea alias
+
+    # usage
+    ?? how many gig free do i have
+
+Benefits:
+
+* Quicker to type
+* Shows up in your shell history
+* Allows editing with normal shell commands like `<ctrl-c>` to cancel or `<ctrl-a>` to go to the start of the line
+* Runs the command as a child process of your shell, rather than a child of Clipea
+
+Behind the scenes this is using zsh's [`print -z`](https://gist.github.com/YumaInaura/2a1a915b848728b34eacf4e674ca61eb#print--z).
 
 ### Advanced usage and tips
 
@@ -91,6 +89,43 @@ Then to edit, press `<up>` then ` ignore node modules` to get something like
 
     $ find . -name "*.js" -not -path "./node_modules/*"
 
+Clipea doesn't have any context of what it said before, though this may be added in the future if there's use cases it helps with.
+
+### More examples
+
+#### System Operations
+
+    ?? open my shell login script in my editor
+    ?? Extract package.tar.gz
+    ?? Install something that converts pdf to text
+    ?? Make a 30 char password
+
+#### File Operations
+
+    ?? Find files bigger than 10mb
+    ?? Rename all txt files space to underscore
+    ?? Convert file.avi to gif
+    ?? Decrypt data.txt.gpg
+
+#### Text Files and Coding
+
+    ?? Highlight URLs in index.html
+    ?? Show me just the headings from README.md
+    ?? count loc recursively
+    ?? Find replace all PHP files in project that call eval function with safe_eval
+    ?? git fetch, rebase master, safely force push
+    ?? turn orders.csv into sqlite
+    ?? count payments in orders.db
+
+#### Web and Network Tasks
+
+    ?? open bbc news
+    ?? check the spf record for example.com
+    ?? What port is my webserver listening on
+    ?? Check cors headers for api.example.com
+    ?? Where is nginx writing logs
+    ?? Quick http server
+
 ## 🚀 Installation and setup
 
 ### Mac
@@ -114,12 +149,6 @@ Then to edit, press `<up>` then ` ignore node modules` to get something like
 > [!NOTICE]
 > The `??` shell alias is highly recommended if you use zsh
 
-Clipea can set up a very handy `??` alias.
-As well as being quicker to type,
-this uses zsh's `print -z`, allowing it to output commands on the commandline.
-
-Install the alias:
-
     clipea alias
 
 ## Internals
@@ -135,16 +164,13 @@ Running `clipea setup` will talk you through getting OpenAI keys.
 
 ### Safety
 
-AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
-
-Always read and check what Clipea suggets before accepting it.
+Always read and check what Clipea suggests before accepting it.
 
 ### Privacy
 
 Clipea uses OpenAI's APIs by default, though can be set to use any LLM that `llm` supports.
 
 Only very basic environment info like your OS and editor is sent to the LLM.
-
 Run `clipea env` to see the data the LLM gets.
 
 ### Cost
@@ -156,7 +182,7 @@ Set a quota and keep an eye on costs to make sure.
 
 Contributions welcome.
 
-## Licence
+## License
 
 MIT License
 
