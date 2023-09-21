@@ -183,6 +183,8 @@ Running `clipea setup` will talk you through getting OpenAI keys.
 
 Always read and check what Clipea suggests before accepting it.
 
+![destroy all humans](https://github.com/dave1010/clipea/assets/50682/afa819bd-a8cc-4968-973f-9b99ceaab5b4)
+
 ### Privacy
 
 Clipea uses OpenAI's APIs by default, though can be set to use any LLM that `llm` supports.
