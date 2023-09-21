@@ -10,6 +10,8 @@ It has similar roots to [Hubcap](https://github.com/dave1010/hubcap) but is less
 
 Tell Clipea what you want to do and it'll give you a shell command, asking you if you want to run it. Clipea works even better with Zsh, as it adds the shell command to your console as a pending command, just as if you had typed it yourself!
 
+![clipea-gif](https://github.com/dave1010/clipea/assets/50682/9aae6c64-2d09-4e7f-9d86-4d82dd4bc076)
+
 > [!WARNING]
 > AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
 
