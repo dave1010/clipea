@@ -4,25 +4,33 @@
 
 **Like Clippy but for the CLI. A blazing fast AI helper for your command line.**
 
-Clipea is a barebones, cheaper and hackable [Copilot for CLI](https://githubnext.com/projects/copilot-cli).
-
-It has similar roots to [Hubcap](https://github.com/dave1010/hubcap) but is less dangerous and actually designed to be a usable productivity tool, rather than just a tech demo.
+Clipea is a streamlined, cheap and hackable tool that integrates GPT with your console.
+It's like Github's [Copilot for CLI](https://githubnext.com/projects/copilot-cli) but it's cheaper, faster and doesn't get in your way.
 
 Tell Clipea what you want to do and it'll give you a shell command, asking you if you want to run it. Clipea works even better with Zsh, as it adds the shell command to your console as a pending command, just as if you had typed it yourself!
 
 ![clipea-gif](https://github.com/dave1010/clipea/assets/50682/9aae6c64-2d09-4e7f-9d86-4d82dd4bc076)
 
+Clipea was born out of [Hubcap](https://github.com/dave1010/hubcap), an experimental autonomous agent. 
+Clipea is less dangerous and actually designed to be a usable productivity tool, rather than just a tech demo.
+
+Advantages over copying and pasting from ChatGPT:
+
+* Speed. No need to switch to your browser and back
+* Shell integration, like filename completion
+* Automatically knows things like your shell and OS
+
 > [!WARNING]
 > AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
 
-## Quick Start
+## 🚀 Quick Start
 
     brew tap dave1010/clipea
     brew install clipea
     clipea setup
     clipea alias
 
-## Usage
+## 🪄 Usage
 
 Once installed, just ask Clipea for a command:
 
@@ -30,13 +38,13 @@ Once installed, just ask Clipea for a command:
 
 Type `y<enter>` to run the command. Anything else or `<ctrl-c>` to cancel.
 
-Or if you have the Zsh integration (highly recommended), it's even easier:
+Or, if you have the Zsh integration (highly recommended), it's even easier:
 
     ?? how many gig free do i have
 
-Just press `<enter>` to run the command.
+Just press `<enter>` to run the command or `<backspace>` if you want to edit it.
 
-### Using the Zsh shell integration (recommended)
+### ❓❓ Using the Zsh shell integration (recommended)
 
 The Zsh integration is more than just a quick alias.
 It allows Clipea to put the command in your input buffer, ready to run, just as if you'd typed it yourself.
@@ -56,7 +64,7 @@ Benefits:
 
 Behind the scenes this is using zsh's [`print -z`](https://gist.github.com/YumaInaura/2a1a915b848728b34eacf4e674ca61eb#print--z).
 
-### Advanced usage and tips
+### 🧙 Advanced usage and tips
 
 GPT-4 mode: just start the query with a "4". Remember that OpenAI charge lots more for GPT-4.
 Generally the standard GPT-3.5 is fine for commandline stuff.
@@ -78,7 +86,7 @@ This allows it to give better responses.
     ?? install curl
     ?? compare README.md to my clipboard
 
-### Feedback and editing
+### ⤴️ Feedback and editing
 
 Just use your shell history by pressing the `<up>` arrow key. Your cursor will be at the end of
 the last line, ready to edit it.
@@ -93,7 +101,7 @@ Then to edit, press `<up>` then ` ignore node modules` to get something like
 
 Clipea doesn't have any context of what it said before, though this may be added in the future if there's use cases it helps with.
 
-### More examples
+###  More examples
 
 #### System Operations
 
@@ -128,7 +136,7 @@ Clipea doesn't have any context of what it said before, though this may be added
     ?? Where is nginx writing logs
     ?? Quick http server
 
-## 🚀 Installation and setup
+## 📦 Installation and setup
 
 ### Mac
 
@@ -162,7 +170,7 @@ Clipea uses [llm](https://github.com/simonw/llm) to interact with large language
 By default it will use OpenAI's GPT-3.5 model but can be configured to other models, such as Llama.
 Running `clipea setup` will talk you through getting OpenAI keys.
 
-## Warnings
+## ❗ Warnings
 
 ### Safety
 
