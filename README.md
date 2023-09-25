@@ -163,7 +163,7 @@ Clipea doesn't have any context of what it said before, though this may be added
 
 ### Zsh Shell integration and Alias
 
-> [!NOTICE]
+> [!INFO]
 > The `??` shell alias is highly recommended if you use zsh
 
     clipea alias
