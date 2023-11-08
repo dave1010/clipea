@@ -16,7 +16,11 @@ $env = [
     // 'cwd' => getcwd(),
 ];
 
-$system = file_get_contents(CLIPEA_DIR . '/system-prompt.txt') . json_encode($env);
+$systemPromptFile = CLIPEA_DIR . '/system-prompt.txt';
+if (file_exists($_SERVER['HOME'] . '/.config/clipea/system-prompt.txt')) {
+    $systemPromptFile = $_SERVER['HOME'] . '/.config/clipea/system-prompt.txt';
+}
+$system = file_get_contents($systemPromptFile) . json_encode($env);
 
 
 function get_input(array $argv) {

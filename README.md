@@ -93,6 +93,18 @@ This allows it to give better responses.
     ?? install curl
     ?? compare README.md to my clipboard
 
+#### Custom Prompt
+
+You can customize your prompt by creating a prompt file in your home directory.
+
+    ~/.config/clipea/system-prompt.txt
+
+You might wanna start by copying the default prompt:
+
+    cp $(dirname $(readlink -f $(which clipea)))/system-prompt.txt ~/.config/clipea/system-prompt.txt
+
+Then edit `~/.config/clipea/system-prompt.txt` to your liking, but be aware that environment info is always added to the end of the prompt.
+
 ### ⤴️ Feedback and editing
 
 Just use your shell history by pressing the `<up>` arrow key. Your cursor will be at the end of
