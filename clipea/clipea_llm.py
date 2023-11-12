@@ -90,6 +90,6 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
             buffer.replace(
                 os.linesep,
                 f";\ {os.linesep}",
-                -1,  # pylint: disable=anomalous-backslash-in-string
+                -1,
             ),
         )

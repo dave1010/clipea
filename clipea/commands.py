@@ -5,8 +5,6 @@ import sys
 import json
 from clipea import ENV, SYSTEM_PROMPT, CLIPEA_DIR, cli
 
-# pylint: disable=import-outside-toplevel
-
 
 def setup():
     """Checks if `llm` has an openai key and prompt to change it or create one"""
@@ -24,7 +22,7 @@ def setup():
         )
     else:
         print("An OpenAI key is already set-up, proceed if you want to change it.")
-    llm.cli.keys_set()  # pylint: disable=no-value-for-parameter
+    llm.cli.keys_set()  
 
 
 def clipea_execute_prompt(user_prompt: str):
@@ -45,14 +43,17 @@ def clipea_execute_prompt(user_prompt: str):
     from clipea import clipea_llm
     from llm import Model, Response
 
-    user_data: str = cli.get_input()
+    llm_name:str = ''
+    if user_prompt.startswith('4 '):
+        user_prompt = user_prompt[2:]
+        llm_name = 'gpt-4'
+
     try:
-        model: Model = clipea_llm.init_llm(
-            "gpt-4" if user_prompt.startswith("4 ") else ""
-        )
+        model: Model = clipea_llm.init_llm(llm_name)
     except Exception as e:
         sys.exit(str(e))
 
+    user_data: str = cli.get_input()
     response: Response = model.prompt(
         system=SYSTEM_PROMPT,
         prompt=user_prompt + (("\n~~~DATA~~~\n" + user_data) if user_data else ""),

@@ -157,21 +157,20 @@ Clipea doesn't have any context of what it said before, though this may be added
 
 ## 📦 Installation and setup
 
-### Mac
+### Manual installation
 
-[![Install with Homebrew](https://img.shields.io/badge/Homebrew-Tap-blue.svg)](https://github.com/dave1010/homebrew-clipea)
+Python >=3.10 is required.
 
-    brew tap dave1010/clipea
-    brew install clipea
-    clipea setup
+You can use the provided `setup.py`. ([setuptools docs](https://setuptools.pypa.io/en/latest/deprecated/easy_install.html))
 
-### Manual install
+You can install it quickly like so:
 
-    pip install llm
-    git clone https://github.com/dave1010/clipea.git
-    cd clipea
-    python3 clipea setup
-    python3 clipea add current dir to my path on shell login
+    python3 setup.py sdist
+    pip install dist/clipea-{version}.tar.gz
+
+### With PyPi
+
+    pip install clipea
 
 ### Zsh Shell integration and Alias
 
