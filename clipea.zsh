@@ -12,7 +12,7 @@ DIR="$(dirname -- "$0")"
 TMP_FILE=$(mktemp)
 
 # Execute the PHP script with an environment variable
-COMMAND_OUTPUT_FILE="$TMP_FILE" "$DIR/clipea" "$@"
+CLIPEA_COMMAND_OUTPUT_FILE="$TMP_FILE" "$DIR/clipea" "$@"
 
 # Read the command to be placed on the Zsh command line
 commandToPlace=$(< "$TMP_FILE")

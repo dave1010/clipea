@@ -170,8 +170,8 @@ Clipea doesn't have any context of what it said before, though this may be added
     pip install llm
     git clone https://github.com/dave1010/clipea.git
     cd clipea
-    ./clipea setup
-    ./clipea add current dir to my path on shell login
+    python3 clipea setup
+    python3 clipea add current dir to my path on shell login
 
 ### Zsh Shell integration and Alias
 
@@ -182,7 +182,7 @@ Clipea doesn't have any context of what it said before, though this may be added
 
 ## Internals
 
-Clipea is currently written in PHP but may switch to Python ([#3](https://github.com/dave1010/clipea/issues/3)).
+Clipea is written in Python (3.10+).
 
 Clipea uses [llm](https://github.com/simonw/llm) to interact with large language models.
 
