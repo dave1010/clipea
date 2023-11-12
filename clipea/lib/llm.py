@@ -33,11 +33,11 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
             current_command = command[2:new_line_pos]
             command = command[new_line_pos + 1 :]
             if output_file:
-                buffer += command
+                buffer += current_command + '\n'
             else:
                 cli.execute_with_prompt(current_command)
         else:
             command = ""
 
         if output_file:
-            lib.utils.write_to_file(output_file, cmd)
+            lib.utils.write_to_file(output_file.replace('\n', ';', -1), cmd)
