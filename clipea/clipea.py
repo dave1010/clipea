@@ -4,7 +4,7 @@ import lib.cli as cli
 import lib.utils as utils
 from pathlib import Path
 
-CLIPEA_DIR: str = os.getcwd()
+CLIPEA_DIR: str = os.path.dirname(os.path.realpath(__file__))
 SYSTEM_PROMPT_FILE: str = CLIPEA_DIR + "/system-prompt.txt"
 USAGE_FILE_PATH: str = CLIPEA_DIR + "/usage.txt"
 HOME_PATH: str = utils.anystr_force_str(os.path.expanduser("~"))
@@ -42,8 +42,9 @@ def commands_router(user_prompt: str) -> None:
 
             data: str = cli.get_input()
             model: Model = init_llm("gpt-4" if user_prompt.startswith("4 ") else "")
-            model.prompt(
+            response: Response = model.prompt(
                 system=SYSTEM_PROMPT,
                 prompt=user_prompt + "~~~DATA~~~" + data,
             )
+            print("test")
             stream_commands(response, command_prefix="📎🟢")

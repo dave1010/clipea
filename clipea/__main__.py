@@ -1,5 +1,6 @@
 import sys
 import clipea
+import shutil
 
 if __name__ == "__main__":
     if shutil.which("llm") == None:
