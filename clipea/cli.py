@@ -44,5 +44,5 @@ def execute_with_prompt(cmd: str, shell: str = None) -> None:
         shell (str, optional): to execute with a particuliar shell. Defaults to None.
     """
     answer = input("\033[0;36mExecute? [y/N] \033[0m").strip().lower()
-    if answer == "y":
+    if sys.stdin.isatty() and answer == "y":
         subprocess.run(cmd, shell=True, executable=shutil.which(shell), check=False)
