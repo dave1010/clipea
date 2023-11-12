@@ -1,4 +1,6 @@
-from setuptools import setup
+"""Setup file for clipea
+"""
+from setuptools import setup, find_packages
 
 setup(
     name="clipea",
@@ -8,7 +10,9 @@ setup(
     author="Dave Hulbert",
     author_email="dave1010@gmail.com",
     license="MIT",
-    packages=["clipea"],
+    packages=find_packages(),
     install_requires=["llm"],
     python_requires=">=3.10",
+    package_data={"clipea": ["*.txt", "clipea.zsh"]},
+    entry_points={"console_scripts": ["clipea = clipea.__main__:clipea_main"]},
 )
