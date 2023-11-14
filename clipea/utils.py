@@ -14,10 +14,7 @@ def anystr_force_str(value: AnyStr) -> str:
     Returns:
         str: AnyStr's bytes decoded to str or it's str
     """
-    if isinstance(value, bytes):
-        return value.decode("utf-8")
-    return value
-
+    return value.decode("utf-8") if isinstance(value, bytes) else value
 
 def read_file(file_path: str) -> str:
     """Reads a file
@@ -64,4 +61,4 @@ def write_to_file(file_path: str, content: AnyStr, mode: str = "w") -> None:
         _type_: _description_
     """
     with open(file_path, mode, encoding="utf-8") as f:
-        return f.write(content)
+        f.write(content)
