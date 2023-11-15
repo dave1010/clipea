@@ -64,7 +64,7 @@ def clipea_execute_prompt(user_prompt: str):
 def alias():
     """Gives zsh's alias (automatic command buffering) commands to the user"""
     shell: str = ENV["shell"]
-    if shell == "zsh":
+    if shell == "zsh" or shell == "-zsh":
         command: str = f"alias '??'='source {CLIPEA_DIR}/clipea.zsh'"
         user_prompt: str = f"Append this line to my {shell} startup file, \
             watching out for quotes and escaping, then explain how to manually source it: {command}"
