@@ -1,6 +1,8 @@
 # Clipea 📎🟢
 
-[![Install with Homebrew](https://img.shields.io/badge/Homebrew-Tap-blue.svg)](https://github.com/dave1010/homebrew-clipea)
+[![Install with pip](https://img.shields.io/badge/Install_with-pip-blue)](https://pypi.org/project/clipea-cli/)
+[![PyPI](https://img.shields.io/pypi/v/clipea-cli.svg)](https://pypi.org/project/clipea-cli/)
+
 
 **Like Clippy but for the CLI. A blazing fast AI helper for your command line.**
 
@@ -25,8 +27,7 @@ Advantages over copying and pasting from ChatGPT:
 
 ## 🚀 Quick Start
 
-    brew tap dave1010/clipea
-    brew install clipea
+    pip install clipea-cli
     clipea setup
     clipea alias
 
@@ -174,9 +175,9 @@ Or development mode:
 
     pip install -e .
 
-### With PyPi (soon)
+### With PyPi
 
-    #pip install clipea
+    pip install clipea-cli
 
 ### Zsh Shell integration and Alias
 

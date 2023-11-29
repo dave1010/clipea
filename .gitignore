@@ -2,6 +2,6 @@ __pycache__
 .vscode
 .ruff_cache
 dist
-clipea.egg-info
+clipea_cli.egg-info
 build
 .DS_Store
