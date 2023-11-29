@@ -14,12 +14,12 @@ CLIPEA_SCRIPT_DIR=$(dirname $(readlink -f ${(%):-%x}))
 
 CLIPEA_PYTHON=
 
-CLIPEA_PATH=$(which clipea)
+CLIPEA_PATH=$(builtin which clipea)
 
 # Run clipea from the current dir if possible
 if [[ -f $CLIPEA_SCRIPT_DIR/__main__.py ]]; then
     CLIPEA_PATH=$CLIPEA_SCRIPT_DIR
-    CLIPEA_PYTHON="$(which python3 || which python)"
+    CLIPEA_PYTHON="$(builtin which python3 || builtin which python)"
 fi
 
 # Execute clipea with an environment variable
