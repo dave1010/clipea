@@ -44,6 +44,8 @@ Or, if you have the Zsh integration (highly recommended), it's even easier:
 
 Just press `<enter>` to run the command or `<backspace>` if you want to edit it.
 
+Clipea works best when you give it a task to complete, rather than a question: LLMs love explaining things whenever you're not sure.
+
 ### ❓❓ Using the Zsh shell integration (recommended)
 
 The Zsh integration is more than just a quick alias.
