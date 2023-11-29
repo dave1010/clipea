@@ -11,7 +11,7 @@ Tell Clipea what you want to do and it'll give you a shell command, asking you i
 
 ![clipea-gif](https://github.com/dave1010/clipea/assets/50682/9aae6c64-2d09-4e7f-9d86-4d82dd4bc076)
 
-Clipea was born out of [Hubcap](https://github.com/dave1010/hubcap), an experimental autonomous agent. 
+Clipea was born out of [Hubcap](https://github.com/dave1010/hubcap), an experimental autonomous agent.
 Clipea is less dangerous and actually designed to be a usable productivity tool, rather than just a tech demo.
 
 Advantages over copying and pasting from ChatGPT:
@@ -20,7 +20,7 @@ Advantages over copying and pasting from ChatGPT:
 * Shell integration, like filename completion
 * Automatically knows things like your shell and OS
 
-> [!WARNING]
+> [!CAUTION]
 > AI isn't perfect. Clipea might suggest a dangerous command. Be careful.
 
 ## 🚀 Quick Start
@@ -113,7 +113,7 @@ Just use your shell history by pressing the `<up>` arrow key. Your cursor will b
 the last line, ready to edit it.
 
 For example: typing `?? list js files recursively` may give
-    
+
     $ find . -name "*.js"
 
 Then to edit, press `<up>` then ` ignore node modules` to get something like
@@ -122,7 +122,7 @@ Then to edit, press `<up>` then ` ignore node modules` to get something like
 
 Clipea doesn't have any context of what it said before, though this may be added in the future if there's use cases it helps with.
 
-###  More examples
+### More examples
 
 #### System Operations
 
@@ -180,7 +180,7 @@ Or development mode:
 
 ### Zsh Shell integration and Alias
 
-> [!INFO]
+> [!TIP]
 > The `??` shell alias is highly recommended if you use zsh
 
     clipea alias
@@ -198,7 +198,8 @@ Running `clipea setup` will talk you through getting OpenAI keys.
 
 ### Safety
 
-Always read and check what Clipea suggests before accepting it.
+> [!CAUTION]
+> Always read and check what Clipea suggests before accepting it.
 
 ![destroy all humans](https://github.com/dave1010/clipea/assets/50682/afa819bd-a8cc-4968-973f-9b99ceaab5b4)
 
