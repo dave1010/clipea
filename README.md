@@ -172,9 +172,9 @@ Or development mode:
 
     pip install -e .
 
-### With PyPi
+### With PyPi (soon)
 
-    pip install clipea
+    #pip install clipea
 
 ### Zsh Shell integration and Alias
 
