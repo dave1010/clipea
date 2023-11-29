@@ -212,6 +212,10 @@ Run `clipea env` to see the data the LLM gets.
 As a very rough example, using the default GPT-3.5, 100 Clipea queries to OpenAI cost $0.02.
 Set a quota and keep an eye on costs to make sure.
 
+## Acknowledgements
+
+Big thanks to @edouard-sn for the port to Python.
+
 ## Contributing
 
 Contributions welcome.
