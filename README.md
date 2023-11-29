@@ -168,6 +168,10 @@ You can install it quickly like so:
     python3 setup.py sdist
     pip install dist/clipea-{version}.tar.gz
 
+Or development mode:
+
+    pip install -e .
+
 ### With PyPi
 
     pip install clipea
