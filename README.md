@@ -27,7 +27,7 @@ Advantages over copying and pasting from ChatGPT:
 
 ## 🚀 Quick Start
 
-    pip install clipea-cli
+    pipx install clipea-cli
     clipea setup
     clipea alias
 
@@ -177,7 +177,7 @@ Or development mode:
 
 ### With PyPi
 
-    pip install clipea-cli
+    pipx install clipea-cli
 
 ### Zsh Shell integration and Alias
 
