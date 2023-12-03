@@ -47,6 +47,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "garyo",
+      "name": "Gary Oberbrunner",
+      "avatar_url": "https://avatars.githubusercontent.com/u/139975?v=4",
+      "profile": "http://darkstarsystems.com",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }
