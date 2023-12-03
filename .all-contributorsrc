@@ -19,6 +19,16 @@
         "maintenance",
         "platform"
       ]
+    },
+    {
+      "login": "b-boehne",
+      "name": "b-boehne",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53817118?v=4",
+      "profile": "https://github.com/b-boehne",
+      "contributions": [
+        "code",
+        "ideas"
+      ]      
     }
   ]
 }
