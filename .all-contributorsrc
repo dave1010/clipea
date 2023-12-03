@@ -1,4 +1,24 @@
 {
   "projectName": "clipea",
-  "projectOwner": "dave1010"
+  "projectOwner": "dave1010",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "edouard-sn",
+      "name": "Edouard SENGEISSEN",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58398928?v=4",
+      "profile": "https://github.com/edouard-sn",
+      "contributions": [
+        "code",
+        "ideas",
+        "maintenance",
+        "platform"
+      ]
+    }
+  ]
 }
