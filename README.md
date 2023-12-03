@@ -227,6 +227,13 @@ Big thanks to @edouard-sn for the port to Python.
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/b-boehne"><img src="https://avatars.githubusercontent.com/u/53817118?v=4?s=100" width="100px;" alt="b-boehne"/><br /><sub><b>b-boehne</b></sub></a><br /><a href="#code-b-boehne" title="Code">💻</a> <a href="#ideas-b-boehne" title="Ideas, Planning, & Feedback">🤔</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
