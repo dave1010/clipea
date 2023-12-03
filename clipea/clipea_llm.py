@@ -87,5 +87,5 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
     if output_file:
         utils.write_to_file(
             output_file,
-            ';\ '.join(buffer.rstrip(os.linesep).split(os.linesep)) + os.linesep,
+            ';'.join(buffer.rstrip(os.linesep).split(os.linesep)) + os.linesep,
         )
