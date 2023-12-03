@@ -28,15 +28,24 @@
       "contributions": [
         "code",
         "ideas"
-      ]      
+      ]
     },
     {
-    "login": "antwxne",
+      "login": "antwxne",
       "name": "Antoine D.",
       "avatar_url": "https://avatars.githubusercontent.com/u/59999873?v=4",
       "profile": "https://github.com/antwxne",
       "contributions": [
         "review"
+      ]
+    },
+    {
+      "login": "lucaspar",
+      "name": "Lucas Parzianello",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7535699?v=4",
+      "profile": "https://github.com/lucaspar",
+      "contributions": [
+        "doc"
       ]
     }
   ]
