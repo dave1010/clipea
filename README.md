@@ -235,6 +235,7 @@ Big thanks to @edouard-sn for the port to Python.
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/antwxne"><img src="https://avatars.githubusercontent.com/u/59999873?v=4?s=100" width="100px;" alt="Antoine D."/><br /><sub><b>Antoine D.</b></sub></a><br /><a href="#review-antwxne" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/lucaspar"><img src="https://avatars.githubusercontent.com/u/7535699?v=4?s=100" width="100px;" alt="Lucas Parzianello"/><br /><sub><b>Lucas Parzianello</b></sub></a><br /><a href="#doc-lucaspar" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://darkstarsystems.com"><img src="https://avatars.githubusercontent.com/u/139975?v=4?s=100" width="100px;" alt="Gary Oberbrunner"/><br /><sub><b>Gary Oberbrunner</b></sub></a><br /><a href="#code-garyo" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/vividfog"><img src="https://avatars.githubusercontent.com/u/75913791?v=4?s=100" width="100px;" alt="vividfog"/><br /><sub><b>vividfog</b></sub></a><br /><a href="#userTesting-vividfog" title="User Testing">📓</a> <a href="#ideas-vividfog" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
 </table>
