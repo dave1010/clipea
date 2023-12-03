@@ -2,6 +2,7 @@
 📎🟢 Like Clippy but for the CLI. A blazing fast AI helper for your command line
 """
 import os
+import sys
 from clipea import utils, cli
 
 
@@ -13,7 +14,7 @@ SYSTEM_PROMPT_FILE: str = utils.get_config_file_with_fallback(
 )
 ENV: dict[str, str] = {
     "shell": cli.get_shell(),
-    "os": os.name,
+    "platform": sys.platform,
     "editor": os.getenv("EDITOR", "nano"),
 }
 SYSTEM_PROMPT: str = utils.read_file(SYSTEM_PROMPT_FILE) + str(ENV)
