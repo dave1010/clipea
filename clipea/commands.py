@@ -8,7 +8,7 @@ from clipea import ENV, SYSTEM_PROMPT, CLIPEA_DIR, cli
 
 def setup():
     """Checks if `llm` has an openai key and prompt to change it or create one"""
-    import llm.cli # pylint: disable=import-outside-toplevel
+    import llm.cli  # pylint: disable=import-outside-toplevel
 
     should_setup = True
     path = llm.cli.user_dir() / "keys.json"
@@ -23,7 +23,7 @@ def setup():
     else:
         print("An OpenAI key is already set-up, proceed if you want to change it.")
     # Trigger key setting (llm uses Click)
-    llm.cli.keys_set() # pylint: disable=no-value-for-parameter
+    llm.cli.keys_set()  # pylint: disable=no-value-for-parameter
 
 
 def clipea_execute_prompt(user_prompt: str):
@@ -41,8 +41,8 @@ def clipea_execute_prompt(user_prompt: str):
     Args:
         user_prompt (str): user command input
     """
-    from clipea import clipea_llm # pylint: disable=import-outside-toplevel
-    from llm import Model, Response # pylint: disable=import-outside-toplevel
+    from clipea import clipea_llm  # pylint: disable=import-outside-toplevel
+    from llm import Model, Response  # pylint: disable=import-outside-toplevel
 
     llm_name: str = ''
     if user_prompt.startswith('4 '):
@@ -51,7 +51,7 @@ def clipea_execute_prompt(user_prompt: str):
 
     try:
         model: Model = clipea_llm.init_llm(llm_name)
-    except Exception as e: # pylint: disable=broad-exception-caught
+    except Exception as e:  # pylint: disable=broad-exception-caught
         sys.exit(str(e))
 
     user_data: str = cli.get_input()
