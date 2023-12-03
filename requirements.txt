@@ -1,0 +1,2 @@
+llm==0.12
+setuptools==68.0.0

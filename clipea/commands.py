@@ -8,7 +8,7 @@ from clipea import ENV, SYSTEM_PROMPT, CLIPEA_DIR, cli
 
 def setup():
     """Checks if `llm` has an openai key and prompt to change it or create one"""
-    import llm.cli
+    import llm.cli  # pylint: disable=import-outside-toplevel
 
     should_setup = True
     path = llm.cli.user_dir() / "keys.json"
@@ -22,7 +22,8 @@ def setup():
         )
     else:
         print("An OpenAI key is already set-up, proceed if you want to change it.")
-    llm.cli.keys_set()  
+    # Trigger key setting (llm uses Click)
+    llm.cli.keys_set()  # pylint: disable=no-value-for-parameter
 
 
 def clipea_execute_prompt(user_prompt: str):
@@ -40,17 +41,17 @@ def clipea_execute_prompt(user_prompt: str):
     Args:
         user_prompt (str): user command input
     """
-    from clipea import clipea_llm
-    from llm import Model, Response
+    from clipea import clipea_llm  # pylint: disable=import-outside-toplevel
+    from llm import Model, Response  # pylint: disable=import-outside-toplevel
 
-    llm_name:str = ''
+    llm_name: str = ''
     if user_prompt.startswith('4 '):
         user_prompt = user_prompt[2:]
         llm_name = 'gpt-4'
 
     try:
         model: Model = clipea_llm.init_llm(llm_name)
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-exception-caught
         sys.exit(str(e))
 
     user_data: str = cli.get_input()
@@ -64,7 +65,7 @@ def clipea_execute_prompt(user_prompt: str):
 def alias():
     """Gives zsh's alias (automatic command buffering) commands to the user"""
     shell: str = ENV["shell"]
-    if shell == "zsh" or shell == "-zsh":
+    if shell in ('zsh', '-zsh'):
         command: str = f"alias '??'='source {CLIPEA_DIR}/clipea.zsh'"
         user_prompt: str = f"Append this line to my {shell} startup file, \
             watching out for quotes and escaping, then explain how to manually source it: {command}"

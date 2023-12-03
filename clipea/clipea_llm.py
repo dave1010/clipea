@@ -57,7 +57,7 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
             current_command = command[2:new_line_pos]
         else:
             current_command = command[2:]
-        command = command[new_line_pos + 1 :]
+        command = command[new_line_pos + 1:]
 
         if output_file is not None:
             buffer += current_command + os.linesep
@@ -87,5 +87,5 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
     if output_file:
         utils.write_to_file(
             output_file,
-            ';\ '.join(buffer.rstrip(os.linesep).split(os.linesep)) + os.linesep,
+            ';'.join(buffer.rstrip(os.linesep).split(os.linesep)) + os.linesep,
         )

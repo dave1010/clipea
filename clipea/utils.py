@@ -16,6 +16,7 @@ def anystr_force_str(value: AnyStr) -> str:
     """
     return value.decode("utf-8") if isinstance(value, bytes) else value
 
+
 def read_file(file_path: str) -> str:
     """Reads a file
 
