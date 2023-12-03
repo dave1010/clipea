@@ -236,6 +236,7 @@ Big thanks to @edouard-sn for the port to Python.
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/lucaspar"><img src="https://avatars.githubusercontent.com/u/7535699?v=4?s=100" width="100px;" alt="Lucas Parzianello"/><br /><sub><b>Lucas Parzianello</b></sub></a><br /><a href="#doc-lucaspar" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://darkstarsystems.com"><img src="https://avatars.githubusercontent.com/u/139975?v=4?s=100" width="100px;" alt="Gary Oberbrunner"/><br /><sub><b>Gary Oberbrunner</b></sub></a><br /><a href="#code-garyo" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/vividfog"><img src="https://avatars.githubusercontent.com/u/75913791?v=4?s=100" width="100px;" alt="vividfog"/><br /><sub><b>vividfog</b></sub></a><br /><a href="#userTesting-vividfog" title="User Testing">📓</a> <a href="#ideas-vividfog" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/dave1010"><img src="https://avatars.githubusercontent.com/u/50682?v=4?s=100" width="100px;" alt="Dave Hulbert"/><br /><sub><b>Dave Hulbert</b></sub></a><br /><a href="#code-dave1010" title="Code">💻</a> <a href="#ideas-dave1010" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-dave1010" title="Maintenance">🚧</a></td>
     </tr>
   </tbody>
 </table>
