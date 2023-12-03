@@ -22,7 +22,7 @@ def setup():
         )
     else:
         print("An OpenAI key is already set-up, proceed if you want to change it.")
-    llm.cli.keys_set()  
+    llm.cli.keys_set()
 
 
 def clipea_execute_prompt(user_prompt: str):
@@ -43,7 +43,7 @@ def clipea_execute_prompt(user_prompt: str):
     from clipea import clipea_llm
     from llm import Model, Response
 
-    llm_name:str = ''
+    llm_name: str = ''
     if user_prompt.startswith('4 '):
         user_prompt = user_prompt[2:]
         llm_name = 'gpt-4'

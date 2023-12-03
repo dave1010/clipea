@@ -1,5 +1,5 @@
 """Clipea application
-📎🟢 Like Clippy but for the CLI. A blazing fast AI helper for your command line 
+📎🟢 Like Clippy but for the CLI. A blazing fast AI helper for your command line
 """
 import os
 from clipea import utils, cli
