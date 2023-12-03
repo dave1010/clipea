@@ -1,4 +1,21 @@
 {
   "projectName": "clipea",
-  "projectOwner": "dave1010"
+  "projectOwner": "dave1010",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "antwxne",
+      "name": "Antoine D.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59999873?v=4",
+      "profile": "https://github.com/antwxne",
+      "contributions": [
+        "review"
+      ]
+    }
+  ]
 }
