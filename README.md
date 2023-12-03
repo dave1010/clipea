@@ -2,6 +2,8 @@
 
 [![Install with pip](https://img.shields.io/badge/Install_with-pip-blue)](https://pypi.org/project/clipea-cli/)
 [![PyPI](https://img.shields.io/pypi/v/clipea-cli.svg)](https://pypi.org/project/clipea-cli/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/clipea-cli)](https://pypi.org/project/clipea-cli/)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/dave1010/clipea/python-app.yml)](https://github.com/dave1010/clipea/actions)
 
 
 **Like Clippy but for the CLI. A blazing fast AI helper for your command line.**
@@ -220,9 +222,16 @@ Set a quota and keep an eye on costs to make sure.
 
 Big thanks to @edouard-sn for the port to Python.
 
-## Contributing
+## Contributors
 
-Contributions welcome.
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## License
 
