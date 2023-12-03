@@ -15,7 +15,12 @@ def clipea_main() -> None:
         sys.exit('Error: dependency "llm" not found. Run "clipea setup" to install')
 
     user_prompt = " ".join(sys.argv[1:])
-    router.commands_router(user_prompt)
+
+    try:
+        router.commands_router(user_prompt)
+    except KeyboardInterrupt:
+        print("\nAborted!")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
