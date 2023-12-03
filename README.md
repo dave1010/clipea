@@ -230,6 +230,7 @@ Big thanks to @edouard-sn for the port to Python.
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/edouard-sn"><img src="https://avatars.githubusercontent.com/u/58398928?v=4?s=100" width="100px;" alt="Edouard SENGEISSEN"/><br /><sub><b>Edouard SENGEISSEN</b></sub></a><br /><a href="#code-edouard-sn" title="Code">💻</a> <a href="#ideas-edouard-sn" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-edouard-sn" title="Maintenance">🚧</a> <a href="#platform-edouard-sn" title="Packaging/porting to new platform">📦</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/b-boehne"><img src="https://avatars.githubusercontent.com/u/53817118?v=4?s=100" width="100px;" alt="b-boehne"/><br /><sub><b>b-boehne</b></sub></a><br /><a href="#code-b-boehne" title="Code">💻</a> <a href="#ideas-b-boehne" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
