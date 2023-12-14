@@ -162,9 +162,24 @@ Clipea doesn't have any context of what it said before, though this may be added
 
 ## 📦 Installation and setup
 
-### Manual installation
-
 Python >=3.10 is required.
+
+### Quck install with PyPi (recommended)
+
+Install for the current user with [`pipx`](https://pypa.github.io/pipx/):
+
+    pipx install clipea-cli
+
+`pipx` is recommended but you can also install in the global context with `pip install clipea-cli`.
+
+### Zsh Shell integration and Alias
+
+> [!TIP]
+> The `??` shell alias is highly recommended if you use zsh
+
+    clipea alias
+
+### Manual installation and development
 
 You can use the provided `setup.py`. ([setuptools docs](https://setuptools.pypa.io/en/latest/deprecated/easy_install.html))
 
@@ -177,16 +192,13 @@ Or development mode:
 
     pip install -e .
 
-### With PyPi
-
-    pipx install clipea-cli
-
 ### Zsh Shell integration and Alias
 
 > [!TIP]
 > The `??` shell alias is highly recommended if you use zsh
 
     clipea alias
+You can tell the zsh script to use this with `CLIPEA_PATH=./clipea source ./clipea/clipea.zsh`.
 
 ## Internals
 
