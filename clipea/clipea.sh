@@ -1,4 +1,6 @@
 #!/bin/bash -i
+# Bash integration script for Clipea.
+
 # Shell should be interactive to better interact with
 #   history e.g. to get the user's $HISTTIMEFORMAT.
 set -e

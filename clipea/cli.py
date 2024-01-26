@@ -50,18 +50,6 @@ def get_current_shell() -> str:
     return current_shell
 
 
-def get_history_cmd(cmd: str) -> str:
-    """Adds a command to the shell's history
-    Args:
-        cmd (str): command to add
-    """
-    shell = get_current_shell()
-    if shell == "zsh":
-        return " ".join(["print", "-s", cmd])
-    elif shell == "bash":
-        return " ".join(["history", "-a", cmd])
-
-
 def find_shell(shell_name: str) -> str | None:
     """Finds the path to the shell passed
     Args:
@@ -108,13 +96,13 @@ def execute_after_approval(dirty_cmd: str, shell: Optional[str] = None) -> str |
     # confirms with user, default is "don't execute"
     answer = input("\033[0;36mExecute [y/N] or [e]dit? \033[0m").strip().lower()
     answer = "n" if answer == "" else answer
+
     # abort if not yes or edit
     if answer not in "ye":
         return None
 
     # enter editing mode if user wants
     approved_cmd = edit_cmd(dirty_cmd) if answer == "e" else dirty_cmd
-    # add_to_history_cmd = get_history_cmd(approved_cmd)
     subprocess.run(
         approved_cmd,
         shell=True,
