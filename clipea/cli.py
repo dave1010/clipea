@@ -32,8 +32,8 @@ def get_current_shell() -> str:
     Returns:
         str: shell's name
     """
-    FALLBACK_SHELL_PATH = "/bin/sh"  # last resort
-    AVAILABLE_SHELLS = [
+    fallback_shell_path = "/bin/sh"  # last resort
+    available_shells = [
         "bash",
         "sh",
         "zsh",
@@ -44,8 +44,8 @@ def get_current_shell() -> str:
     # If clipea is invoked from a shell script, the `ps` command will return
     # the script that invoked it, not the shell that is running. In this case,
     # we fallback to the preferred user shell, indicated by the env var $SHELL:
-    if current_shell not in AVAILABLE_SHELLS:
-        current_shell = os.path.basename(os.environ.get("SHELL", FALLBACK_SHELL_PATH))
+    if current_shell not in available_shells:
+        current_shell = os.path.basename(os.environ.get("SHELL", fallback_shell_path))
     print(f"Current shell: {current_shell}")
     return current_shell
 
