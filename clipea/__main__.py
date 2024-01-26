@@ -1,5 +1,6 @@
 """Clipea application entry point
 """
+
 import sys
 import shutil
 from clipea import router

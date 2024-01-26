@@ -1,7 +1,9 @@
 """LLM
 Interactions with `llm` python library
 """
+
 import os
+import sys
 import llm.cli
 import llm
 import clipea.cli
@@ -45,7 +47,7 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
         command_prefix (str, optional): What to write before streaming the commands. Defaults to "".
     """
     command: str = ""
-    output_file: str = os.getenv("CLIPEA_CMD_OUTPUT_FILE")
+    output_file: str | None = os.getenv("CLIPEA_CMD_OUTPUT_FILE")
     buffer: str = ""
     new_line_pos: int
 
@@ -57,12 +59,17 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
             current_command = command[2:new_line_pos]
         else:
             current_command = command[2:]
-        command = command[new_line_pos + 1:]
+        command = command[new_line_pos + 1 :]
 
+        # if in an interactive shell, prompt the user
+        # for changes then run the command once approved.
+        cmd_executed = None
+        if sys.stdin.isatty():
+            cmd_executed = clipea.cli.execute_after_approval(
+                current_command, shell=ENV["shell"]
+            )
         if output_file is not None:
-            buffer += current_command + os.linesep
-        else:
-            clipea.cli.execute_with_prompt(current_command, shell=ENV["shell"])
+            buffer += (cmd_executed if cmd_executed else current_command) + os.linesep
 
     print(command_prefix, end="")
     for chunk in response:
@@ -87,5 +94,5 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
     if output_file:
         utils.write_to_file(
             output_file,
-            ';'.join(buffer.rstrip(os.linesep).split(os.linesep)) + os.linesep,
+            ";".join(buffer.rstrip(os.linesep).split(os.linesep)) + os.linesep,
         )
