@@ -1,5 +1,6 @@
 """Clipea application entry point
 """
+
 import sys
 import shutil
 from clipea import router
@@ -11,6 +12,7 @@ def clipea_main() -> None:
     and then prompts the user for input. It then routes the user's input
     to the appropriate command in the router.
     """
+
     if shutil.which("llm") is None:
         sys.exit('Error: dependency "llm" not found. Run "clipea setup" to install')
 
