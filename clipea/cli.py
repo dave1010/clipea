@@ -8,6 +8,7 @@ import sys
 import subprocess
 import shutil
 from typing import Optional
+from loguru import logger as log
 
 
 def get_input(max_len: int = 1 << 13) -> str:
@@ -46,7 +47,7 @@ def get_current_shell() -> str:
     # we fallback to the preferred user shell, indicated by the env var $SHELL:
     if current_shell not in available_shells:
         current_shell = os.path.basename(os.environ.get("SHELL", fallback_shell_path))
-    print(f"Current shell: {current_shell}")
+    log.debug(f"Current shell: {current_shell}")
     return current_shell
 
 
@@ -90,14 +91,14 @@ def execute_after_approval(dirty_cmd: str, shell: Optional[str] = None) -> str |
     """
     # do not run if not an interactive shell
     if not sys.stdin.isatty():
-        print("Error: clipea is not running in an interactive shell")
+        log.error("Error: clipea is not running in an interactive shell")
         return None
 
-    # confirms with user, default is "don't execute"
+    # confirms with user
     answer = input("\033[0;36mExecute [y/N] or [e]dit? \033[0m").strip().lower()
-    answer = "n" if answer == "" else answer
+    answer = "n" if not answer else answer # default is "don't execute"
 
-    # abort if not yes or edit
+    # abort if not [y]es or [e]dit
     if answer not in "ye":
         return None
 

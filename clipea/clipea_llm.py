@@ -8,6 +8,7 @@ import llm.cli
 import llm
 import clipea.cli
 from clipea import ENV, HOME_PATH, CLIPEA_DIR, utils
+from loguru import logger as log
 
 
 def init_llm(llm_model: str = "") -> llm.Model:
@@ -48,17 +49,17 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
     """
     command: str = ""
     output_file: str | None = os.getenv("CLIPEA_CMD_OUTPUT_FILE")
-    buffer: str = ""
+    approved_cmd_list: str = ""
     new_line_pos: int
 
     def process_command():
-        nonlocal command, buffer, new_line_pos
+        nonlocal command, approved_cmd_list, new_line_pos
 
-        current_command: str
+        cmd_unapproved: str
         if new_line_pos > 0:
-            current_command = command[2:new_line_pos]
+            cmd_unapproved = command[2:new_line_pos]
         else:
-            current_command = command[2:]
+            cmd_unapproved = command[2:]
         command = command[new_line_pos + 1 :]
 
         # if in an interactive shell, prompt the user
@@ -66,10 +67,17 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
         cmd_executed = None
         if sys.stdin.isatty():
             cmd_executed = clipea.cli.execute_after_approval(
-                current_command, shell=ENV["shell"]
+                cmd_unapproved, shell=ENV["shell"]
             )
         if output_file is not None:
-            buffer += (cmd_executed if cmd_executed else current_command) + os.linesep
+            cmd_to_add: str # command to add to the output file
+            if sys.stdin.isatty():
+                if not cmd_executed:
+                    return  # no command was approved and executed
+                cmd_to_add = cmd_executed
+            cmd_to_add = cmd_unapproved
+            log.debug("Adding to command list: ", cmd_to_add)
+            approved_cmd_list += cmd_to_add + os.linesep
 
     print(command_prefix, end="")
     for chunk in response:
@@ -92,7 +100,12 @@ def stream_commands(response: llm.Response, command_prefix: str = "") -> None:
         process_command()
 
     if output_file:
+        cmd_lines = approved_cmd_list.rstrip(os.linesep).split(os.linesep)
+        cmd_lines = [cmd for cmd in cmd_lines if cmd] # remove empty lines
+        log.debug(f"Writing {len(cmd_lines)} lines to {output_file}")
         utils.write_to_file(
             output_file,
-            ";".join(buffer.rstrip(os.linesep).split(os.linesep)) + os.linesep,
+            ";".join(
+                cmd_lines,
+            ) + os.linesep,
         )

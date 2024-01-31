@@ -5,6 +5,11 @@
 import os
 import sys
 from clipea import utils, cli
+from loguru import logger as log
+
+# set default log level to INFO
+log.remove()
+log.add(sys.stderr, level="INFO")
 
 
 CLIPEA_DIR: str = os.path.dirname(os.path.realpath(__file__))
@@ -18,4 +23,5 @@ ENV: dict[str, str] = {
     "platform": sys.platform,
     "editor": os.getenv("EDITOR", "nano"),
 }
+log.trace(f"ENV: {ENV}")
 SYSTEM_PROMPT: str = utils.read_file(SYSTEM_PROMPT_FILE) + str(ENV)
