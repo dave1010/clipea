@@ -14,7 +14,7 @@ SYSTEM_PROMPT_FILE: str = utils.get_config_file_with_fallback(
 )
 ENV: dict[str, str] = {
     "shell": cli.get_shell(),
-    "platform": sys.platform,
+    "platform": os.getenv("OS", sys.platform),
     "editor": os.getenv("EDITOR", "nano"),
 }
 SYSTEM_PROMPT: str = utils.read_file(SYSTEM_PROMPT_FILE) + str(ENV)
